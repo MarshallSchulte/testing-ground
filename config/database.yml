@@ -18,6 +18,7 @@ test:
   username: travis
   password: ''
   encoding: latin1
+  collation: latin1_general_cs
 
 production:
   <<: *default
