@@ -3,10 +3,6 @@ rvm:
 - 2.7.0
 services:
   - mysql
-before_install:
-  - mysql -e 'use mysql; update user set authentication_string=PASSWORD('rsi1111') where User='travis';'
-  - sudo mysql_upgrade -u root -prsi1111
-  - sudo service mysql restart
 script:
   - 'bundle exec rake db:setup'
   - 'bundle exec rake spec'
