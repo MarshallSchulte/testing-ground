@@ -16,6 +16,7 @@ test:
   <<: *default
   database: testing-ground_test
   username: travis
+  password: ''
 
 production:
   <<: *default
