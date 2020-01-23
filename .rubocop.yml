@@ -1,0 +1,24 @@
+# frozen_string_literal: true
+Layout/LineLength:
+  Max: 99
+Metrics/BlockLength:
+  Exclude:
+    - '~/workspace/testing-ground/test/test_helper.rb'
+    - '~/workspace/testing-ground/test/**/*'
+    - '~/workspace/testing-ground/db/**/*'
+    - '~/workspace/testing-ground/config/**/*'
+    - '~/workspace/testing-ground/bin/**/*'
+    - '~/workspace/testing-ground/Rakefile/**/*'
+    - '~/workspace/testing-ground/Gemfile/**/*'
+    - '~/workspace/testing-ground/Gemfile.lock/**/*'
+
+AllCops:
+  Exclude:
+    - '~/workspace/testing-ground/test/test_helper.rb'
+    - '~/workspace/testing-ground/test/**/*'
+    - '~/workspace/testing-ground/db/**/*'
+    - '~/workspace/testing-ground/config/**/*'
+    - '~/workspace/testing-ground/bin/**/*'
+    - '~/workspace/testing-ground/Rakefile/**/*'
+    - '~/workspace/testing-ground/Gemfile/**/*'
+    - '~/workspace/testing-ground/Gemfile.lock/**/*'
