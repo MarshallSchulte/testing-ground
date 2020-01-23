@@ -17,6 +17,7 @@ test:
   database: testing-ground_test
   username: travis
   password: ''
+  encoding: utf8
 
 production:
   <<: *default
