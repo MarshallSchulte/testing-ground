@@ -17,8 +17,7 @@ test:
   database: testing-ground_test
   username: travis
   password: ''
-  encoding: utf8
-  collation: utf8_general_ci
+  encoding: latin1
 
 production:
   <<: *default
