@@ -4,7 +4,8 @@ rvm:
 services:
   - mysql
 before_install:
-  - mysql -u root -prsi1111 -e "use mysql; ALTER DATABASE testing-ground_test CHARACTER SET = utf8 COLLATE = utf8_general_ci;"
+  - mysql -u root -e "use mysql; ALTER DATABASE testing-ground_test CHARACTER SET = utf8 COLLATE = utf8_general_ci;"
+  - ''
 script:
   - 'bundle exec rake db:setup'
   - 'bundle exec rake spec'
