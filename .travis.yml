@@ -5,7 +5,7 @@ rvm:
 services:
   - mysql
 before install:
-  - sudo cp $TRAVIS_BUILD_DIR/mysql.cnf /etc/mysql/conf.d/
+  - sudo cp mysql.cnf /etc/mysql/conf.d/
   - sudo service mysql restart
 script:
   - 'bundle exec rake db:setup'
