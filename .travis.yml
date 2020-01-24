@@ -1,0 +1,12 @@
+language: ruby
+sudo: required
+rvm:
+- 2.7.0
+services:
+  - mysql
+before install:
+  - sudo cp mysql.cnf /etc/mysql/conf.d/
+  - sudo service mysql restart
+script:
+  - 'bundle exec rake db:setup'
+  - 'bundle exec rake spec'
