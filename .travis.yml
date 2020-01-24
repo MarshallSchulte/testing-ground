@@ -1,10 +1,12 @@
 language: ruby
+sudo: required
 rvm:
 - 2.7.0
 services:
   - mysql
-before_install:
-  - mysql -u root -p'' -e "use mysql; ALTER DATABASE testing-ground_test CHARACTER SET = utf8 COLLATE = utf8_general_ci;"
+before install:
+  - sudo cp $TRAVIS_BUILD_DIR/mysql.cnf /etc/mysql/conf.d/
+  - sudo service mysql restart
 script:
   - 'bundle exec rake db:setup'
   - 'bundle exec rake spec'
