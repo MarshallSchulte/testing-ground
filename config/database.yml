@@ -4,6 +4,8 @@ default: &default
   timeout: 5000
   username: root
   password: rsi1111
+  encoding: utf8
+  collation: utf8_general_ci
 
 development:
   <<: *default
@@ -16,7 +18,7 @@ test:
   <<: *default
   database: testing-ground_test
   username: travis
-  password: ''
+  password: 'rsi1111'
   encoding: utf8
   collation: utf8_general_ci
 
