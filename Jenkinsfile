@@ -1,14 +1,10 @@
 pipeline {
     agent any
-    stages {
-        stage('Build') {
-            steps {
-                sh 'rspec'
-                sh '''
-                    echo "Multiline shell steps works too"
-                    ls -lah
-                '''
-            }
+    node('docker') {
+        // .. 'stage' steps removed
+        docker.image('rtyler/rvm:2.7.0').inside {
+            rvm 'bundle install'
+            rvm 'bundle exec rake'
         }
     }
 }
