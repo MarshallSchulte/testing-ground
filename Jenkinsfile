@@ -3,11 +3,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'bundle install'
+                sh 'bundle exec rake db:setup'
                 sh 'rspec'
-                sh '''
-                    echo "Multiline shell steps works too"
-                    ls -lah
-                '''
             }
         }
     }
