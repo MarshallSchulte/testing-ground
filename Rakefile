@@ -4,3 +4,6 @@
 require_relative 'config/application'
 
 Rails.application.load_tasks
+require 'ci/reporter/rake/rspec'
+# Make sure we setup ci_reporter before executing our RSpec examples
+task :spec => 'ci:setup:rspec'

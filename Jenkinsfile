@@ -1,12 +1,10 @@
 pipeline {
     agent any
-    stages {
-        stage('Build') {
-            steps {
-                sh 'bundle install'
-                sh 'bundle exec rake db:setup'
-                sh 'rspec'
-            }
+    node('docker') {
+        // .. 'stage' steps removed
+        docker.image('rtyler/rvm:2.7.0').inside {
+            rvm 'bundle install'
+            rvm 'bundle exec rake'
         }
     }
 }
